@@ -1,0 +1,124 @@
+* {
+    margin: 0 auto;     /** dış kenar//  CSS margin özelliği elementin dışında boşluk oluşturmak için kullanılır. */
+    padding: 0;            /** iç kenar // CSS'te padding özelliğini içeriğin etrafında boşluk oluşturmak için kullanırız */
+    box-sizing: border-box;  /**  CSS'te box-sizing özelliği bir HTML öğesinin width ve height değerini etkilemeden padding ve borde*/
+}
+
+.container{
+    display: flex;          /** display: flex; kullanılarak kapsayıcı içerisindeki öğelere artık esneklik vermeye başlayabiliriz. */  
+    flex-direction: row;    /**  flex-direction: row ile item'lar sırasıyla soldan sağa hizalanır*/
+    flex-wrap: wrap;        /**  flex-wrap. Varsayılan olarak esnek öğeler tek bir satıra sığmaya çalışırlar. Gerektiğinde birden fazla satıra yaymak için bu özelliği kullanabilirsiniz*/
+    justify-content: center;    /**Bir öğeyi esnek kutu içerisinde hem ana-eksende hem de çapraz eksende ortalamak için alig-items ya da align-content özelliği ile birlikte kullanılabilir.*/
+    align-content: center;
+    width: 100%;                /*** GENİŞLİK */
+    width: 1440px;
+
+
+}
+
+.header {
+    display: flex;
+    justify-content:space-between;   /**    Her hat arasındaki boşluklar birbirine eşit olur.  */
+    padding: 1rem; 
+    /* text-align: center; */
+    flex-wrap: wrap;        
+    align-items: flex-start;
+    
+}
+
+.right-header{
+    width: 35%;
+}
+.left-header{
+    width: 40%;
+}
+
+.images{
+    display: grid;   /**  Tanımlanan grid değeri taşıyıcı içindeki elemanları satır ve sütun şeklinde konumlandırmayı sağlar. Böylece alt elemanlar taşıyıcı içerisinde kolay bir şekilde konumlanabilir hale gelir.*/
+    grid-template-columns: repeat(3,1fr); /**içindeki tekrarlayan yapıları teke indiren bir kısayoldur.*/Kullanılabilinir alanı ifade ediyor.*/
+    align-items: center;   /** Bu özellik ise justify-content‘in yatay eksende yaptığı şeyleri dikey eksende yapmaya yarar. */
+    justify-content: center;   /**  Flex özelliğine sahip olan bir kapsayıcının yatay eksende nasıl hizalanacağını ayarlar.*/
+    gap: 1rem;                      
+    /**gap CSS özelliği flexbox, grid ve multi-column yapılarda esnek öğeler arasındaki boşluğu ayarlamak için kullanılmaktadır. Gap kelimesi boşluk ve açıklık anlamına gelmektedir. Grid CSS ızgara görünümü ve flexbox özellikleri ile kullanılabilir.*/
+
+}
+
+.img{
+    width: 300px;
+}
+
+.imgdown{
+    margin-top: 10rem;
+    width: 300px;
+
+}
+
+.images img{
+    border-radius: 5px;
+    box-shadow: 0px 0px 9px  black;
+}
+
+
+
+.dik{
+    transform: rotate(90deg);  /**  Rotate parametresi, adından da anlaşılacağı üzere nesneyi döndürmek için kullanılan bir parametre türüdür. Nesnenin kaç derece döneceğini “deg” türünde belirtmekteyiz.*/
+    right: 0rem;
+    margin-top: 35px;
+    font-size: 50%;
+    position: absolute;   /**  position:absolute; özelliği olan bir eleman en yakın pozisyon değeri relative olan elemana göre kendini konumlandırır. Eğer position:relative; özelliğine sahip bir ebeveyni yoksa belgeye göre kendini konumlandıracaktır*/
+
+}
+
+.yazı{
+    width: 100%;
+    position: relative;    /**   CSS'de "position:relative" özelliği, normal konumuna göre konumlandırılmıştır..**/
+}
+
+
+@media screen and (max-width:990px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+    }
+
+    .images{
+        display: grid;
+        grid-template-columns: repeat(2,1fr)
+    }
+
+    .media{
+        margin-top: 50%;
+    }
+    .right-header{
+        width: 80%;
+    }
+    .left-header{
+        width: 80%;
+        text-align: center;
+    }
+    .grif{
+        margin-top: 0 ;
+    }
+  
+}
+
+@media screen and (max-width:600px) {
+
+    .images{
+        margin: 2rem;
+        display: grid;
+        grid-template-columns: repeat(1,1fr)
+    }
+    
+}
+
+
+
+
+
+
+
